@@ -13,6 +13,9 @@ realizziamo le specifiche scritte sopra. La risposta finale (o output) sarà anc
 Nota: Se non vi sentite particolarmente creativi, questo screenshot potrebbe essere un’implementazione da seguire per il secondo milestone.
 Potete scegliere di implementare una soluzione completamente diversa oppure simile, ma in ogni caso cercate di farla vostra. */
 
+//document === DOM
+//prompt
+
 const distance = parseInt(prompt("insert km:"));
 const age = parseInt(prompt("Insert your age:"));
 
@@ -21,31 +24,13 @@ let message;
 let price = distance * 0.26;
 console.log("The ticket price is: " + price, "$");
 
-/* if (age < 18) {
-  price = price - (price * 15) / 100;
-  message = "15% discount your new price is:" + price.toFixed(2) + "$";
-  console.log(message);
-} else if (age > 65) {
-  price = price - (price * 35) / 100;
-  message = "35% discount your new price is:" + price.toFixed(2) + "$";
-  console.log(message);
-} else {
-  message = "Your price is:" + price.toFixed(2) + "$";
-  console.log(message);
-}
- */
-
-//document === DOM
-
-const usrDistance = document.querySelector("#usrDistance");
+const usrDistance = document.getElementById("usrDistance");
 
 const usrAge = document.getElementById("usrAge");
 
 const button = document.getElementById("button");
 
 button.addEventListener("click", function () {
-  console.log(usrDistance.value);
-  console.log(usrAge.value);
   if (age < 18) {
     price = price - (price * 15) / 100;
     message = "15% discount your new price is:" + price.toFixed(2) + "$";
@@ -68,3 +53,6 @@ document.getElementById("#button").onclick = function () {
   let usrAge = document.getElementById("#usrAge").value;
   console.log("your age is:", usrAge);
 }; */
+
+//console.log(usrDistance.value);
+//console.log(usrAge.value);
