@@ -18,16 +18,15 @@ Potete scegliere di implementare una soluzione completamente diversa oppure simi
 
 //console.log("The ticket price is: " + price, "$");
 
-let message;
-
 const button = document.getElementById("button");
 const usrDistance = document.getElementById("usrDistance");
 const usrAge = document.getElementById("usrAge");
 
 button.addEventListener("click", function () {
+  const usrDistance = parseInt(usrDistance.value * 0.26);
+  const usrAge = parseInt(usrAge.value);
+  let message;
   if (usrAge < 18) {
-    const usrDistance = parseInt(usrDistance.value * 0.26);
-    const usrAge = parseInt(usrAge.value);
     let price = parseInt(usrDistance * 0.26);
     price = parseInt(price - (price * 15) / 100);
     message = "15% discount your new price is:" + price.toFixed(2) + "$";
