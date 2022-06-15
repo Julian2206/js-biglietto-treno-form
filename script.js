@@ -13,33 +13,32 @@ realizziamo le specifiche scritte sopra. La risposta finale (o output) sarà anc
 Nota: Se non vi sentite particolarmente creativi, questo screenshot potrebbe essere un’implementazione da seguire per il secondo milestone.
 Potete scegliere di implementare una soluzione completamente diversa oppure simile, ma in ogni caso cercate di farla vostra. */
 
-//document === DOM
-//prompt
+//const distance = parseInt(prompt("insert km:"));
+//const age = parseInt(prompt("Insert your age:"));
 
-const distance = parseInt(prompt("insert km:"));
-const age = parseInt(prompt("Insert your age:"));
+//console.log("The ticket price is: " + price, "$");
 
 let message;
 
-let price = distance * 0.26;
-console.log("The ticket price is: " + price, "$");
-
+const button = document.getElementById("button");
 const usrDistance = document.getElementById("usrDistance");
-
 const usrAge = document.getElementById("usrAge");
 
-const button = document.getElementById("button");
-
 button.addEventListener("click", function () {
-  if (age < 18) {
-    price = price - (price * 15) / 100;
+  if (usrAge < 18) {
+    const usrDistance = parseInt(usrDistance.value * 0.26);
+    const usrAge = parseInt(usrAge.value);
+    let price = parseInt(usrDistance * 0.26);
+    price = parseInt(price - (price * 15) / 100);
     message = "15% discount your new price is:" + price.toFixed(2) + "$";
     console.log(message);
-  } else if (age > 65) {
+  } else if (usrAge > 65) {
+    let price = usrDistance * 0.26;
     price = price - (price * 35) / 100;
     message = "35% discount your new price is:" + price.toFixed(2) + "$";
     console.log(message);
   } else {
+    let price = usrDistance * 0.26;
     message = "Your price is:" + price.toFixed(2) + "$";
     console.log(message);
   }
