@@ -19,34 +19,45 @@ const age = parseInt(prompt("Insert your age:"));
 let message;
 
 let price = distance * 0.26;
-console.log("The ticket price is: " + price);
+console.log("The ticket price is: " + price, "$");
 
-if (age < 18) {
+/* if (age < 18) {
   price = price - (price * 15) / 100;
-  message = "20% discount your new price is:" + price.toFixed(2);
+  message = "15% discount your new price is:" + price.toFixed(2) + "$";
   console.log(message);
 } else if (age > 65) {
   price = price - (price * 35) / 100;
-  message = "40% discount your new price is:" + price.toFixed(2);
+  message = "35% discount your new price is:" + price.toFixed(2) + "$";
   console.log(message);
 } else {
   message = "Your price is:" + price.toFixed(2) + "$";
   console.log(message);
 }
+ */
 
 //document === DOM
 
 const usrDistance = document.querySelector("#usrDistance");
 
-const usrAge = document.getElementById("#ursAge");
+const usrAge = document.getElementById("usrAge");
 
-const button = document.getElementById("#button");
+const button = document.getElementById("button");
 
 button.addEventListener("click", function () {
-  //console.log(distance);
-  //console.log(age);
   console.log(usrDistance.value);
   console.log(usrAge.value);
+  if (age < 18) {
+    price = price - (price * 15) / 100;
+    message = "15% discount your new price is:" + price.toFixed(2) + "$";
+    console.log(message);
+  } else if (age > 65) {
+    price = price - (price * 35) / 100;
+    message = "35% discount your new price is:" + price.toFixed(2) + "$";
+    console.log(message);
+  } else {
+    message = "Your price is:" + price.toFixed(2) + "$";
+    console.log(message);
+  }
 });
 
 /* const button = document.getElementById("#button");
