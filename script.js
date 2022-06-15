@@ -17,27 +17,27 @@ Potete scegliere di implementare una soluzione completamente diversa oppure simi
 //const age = parseInt(prompt("Insert your age:"));
 
 //console.log("The ticket price is: " + price, "$");
+let message;
 
 const button = document.getElementById("button");
 const usrDistance = document.getElementById("usrDistance");
 const usrAge = document.getElementById("usrAge");
 
 button.addEventListener("click", function () {
-  const usrDistance = parseInt(usrDistance.value * 0.26);
-  const usrAge = parseInt(usrAge.value);
-  let message;
-  if (usrAge < 18) {
-    let price = parseInt(usrDistance * 0.26);
+  const distance = parseInt(usrDistance.value * 0.26);
+  const age = parseInt(usrAge.value);
+  if (age < 18) {
+    let price = parseInt(distance * 0.26);
     price = parseInt(price - (price * 15) / 100);
     message = "15% discount your new price is:" + price.toFixed(2) + "$";
     console.log(message);
-  } else if (usrAge > 65) {
-    let price = usrDistance * 0.26;
+  } else if (age > 65) {
+    let price = distance * 0.26;
     price = price - (price * 35) / 100;
     message = "35% discount your new price is:" + price.toFixed(2) + "$";
     console.log(message);
   } else {
-    let price = usrDistance * 0.26;
+    let price = distance * 0.26;
     message = "Your price is:" + price.toFixed(2) + "$";
     console.log(message);
   }
